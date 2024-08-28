@@ -15,6 +15,7 @@
   --second-bg-color: #112e42;
   --text-color: #ededed;
   --main-color: #00abf0;
+  --icon-color: #1b346c;
 }
 html {
   font-size: 62.5%;
@@ -35,6 +36,8 @@ body {
   align-items: center;
   background: transparent;
   z-index: 100;
+  background: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--bg-color);
 }
 .logo {
   font-size: 3rem;
@@ -47,9 +50,10 @@ body {
   align-items: center;
 }
 .header .logo img {
-  width: 7.5rem;
-  height: 7.5rem;
-  vertical-align: middle; /* Ensure the image aligns with the text */
+  width: 5.9rem;
+  height: 5.9rem;
+  vertical-align: middle;
+  margin-bottom: 0.8rem; /* Ensure the image aligns with the text */
 }
 
 .navbar a {
@@ -58,7 +62,7 @@ body {
   color: var(--text-color);
   font-weight: 500;
   transition: 0.3;
-  line-height: 7.5rem; /* Set the line height to match the image height */
+  line-height: 5.8rem; /* Set the line height to match the image height */
 }
 .navbar a:hover,
 .navbar a.active {
@@ -66,9 +70,9 @@ body {
 }
 .navbar button {
   display: inline-block;
-  border-radius: 4rem;
+  border-radius: 1rem;
   background: var(--main-color);
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2rem;
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
   letter-spacing: 0.1rem;
@@ -86,6 +90,8 @@ body {
   color: var(--text-color);
 }
 
+/* home section */
+
 section {
   min-height: 100vh;
   padding: 10rem 9% 2rem;
@@ -100,6 +106,9 @@ section {
   font-size: 2.8rem;
   font-weight: 700;
 }
+section span {
+  color: var(--main-color);
+}
 .home-content h1 {
   font-size: 5.4rem;
   font-weight: 700;
@@ -108,11 +117,24 @@ section {
 .home-content p {
   font-size: 1.6rem;
   max-width: 60rem;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
 }
 .home-img img {
   height: 42rem;
   width: 42rem;
+  animation: bitmoji 2s linear infinite;
+}
+
+@keyframes bitmoji {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(0px, 1.4rem);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 .social-media a {
   display: inline-flex;
@@ -135,9 +157,9 @@ section {
 }
 .download-cv {
   display: inline-block;
-  border-radius: 4rem;
+  border-radius: 1rem;
   background: var(--main-color);
-  padding: 1rem 2.8rem;
+  padding: 1.2rem 2.8rem;
   color: var(--second-bg-color);
   box-shadow: 0 0 1rem var(--main-color);
   letter-spacing: 0.1rem;
@@ -146,4 +168,84 @@ section {
 }
 .download-cv:hover {
   box-shadow: none;
+}
+
+/* about section */
+.about {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 9%;
+  align-items: center;
+  justify-items: center;
+}
+
+.tech-stack {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.tech-stack h1 {
+  text-align: center;
+  margin: 4rem 0;
+  font-size: 3rem;
+}
+
+.single-skill {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+}
+
+.single-skill .skill-container {
+  background-color: var(--icon-color);
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem black; /* Adjust padding to create space around the image */
+}
+
+.single-skill img {
+  padding: 1.1rem; /* Ensure the image itself is circular */
+  height: 7.5rem;
+  width: 7.5rem;
+  /* Ensures the image covers the container */
+}
+.single-skill .skill-container:hover {
+  transform: scale(1.1); /* Scale the container to 110% on hover */
+}
+
+.my-experience {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.my-experience h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.company img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  margin-right: 2rem; /* Add spacing between image and text */
+}
+
+.data {
+  max-width: 50rem; /* Set max-width to prevent overflow */
 }

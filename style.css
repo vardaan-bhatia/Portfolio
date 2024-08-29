@@ -57,7 +57,7 @@ body {
 
 .navbar a {
   font-size: 1.7rem;
-  margin-left: 3.5rem;
+  margin-left: 3rem;
   color: var(--text-color);
   font-weight: 500;
   transition: 0.3;
@@ -193,15 +193,15 @@ section span {
 .single-skill {
   display: flex;
   flex-wrap: wrap;
-  gap: 4rem; /* Reduce gap between skill items */
+  gap: 5rem; /* Reduce gap between skill items */
   justify-content: center;
 }
 
 .single-skill .skill-container {
   background-color: var(--icon-color);
   border-radius: 50%;
-  height: 9rem; /* Adjust size for better fit */
-  width: 9rem; /* Adjust size for better fit */
+  height: 8.5rem; /* Adjust size for better fit */
+  width: 8.5rem; /* Adjust size for better fit */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,6 +237,7 @@ section span {
 
 .single-skill .skill-container:hover {
   background-color: var(--text-color);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 20px 30px rgba(0, 0, 0, 0.2);
   /* Change background color on hover */
 }
 
@@ -291,8 +292,9 @@ section span {
 .data li {
   position: relative; /* Position context for the line */
   margin-bottom: 2rem; /* Space between list items */
-  font-size: 1.9rem; /* Increase font size for better readability */
-  padding-left: 2.5rem; /* Space for the dot and line */
+  font-size: 2rem; /* Increase font size for better readability */
+  padding-left: 2.5rem;
+  margin-top: 2.5rem; /* Space for the dot and line */
 }
 
 /* Dot with box shadow */
@@ -320,4 +322,123 @@ section span {
   z-index: -1; /* Place behind the list item text */
 }
 
-/* Remove the dot and line for the last item */
+/* Projects Section */
+/* Projects Section */
+.projects {
+  padding: 10rem 9%;
+  text-align: center;
+  page-break-after: always;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(30rem, 1fr)
+  ); /* Equal-sized grid columns */
+  gap: 5rem;
+  justify-items: center;
+}
+
+.project-box {
+  background-color: var(--second-bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 15px 20px rgba(0, 0, 0, 0.1); /* Improved shadow */
+  height: 48rem;
+  width: 100%;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 5rem;
+  cursor: pointer;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 0 20px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.project-box img {
+  width: 100%;
+  height: 55%;
+  object-fit: cover;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.project-details {
+  padding: 1rem;
+  text-align: left;
+}
+
+.project-name {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.5rem; /* Reduced gap for better spacing */
+  flex-wrap: wrap;
+  /* Allow tech stack to wrap if needed */
+  margin-bottom: 1.5rem;
+  justify-content: flex-start; /* Align tech stack to the left */
+}
+
+.tech-button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem; /* Smaller padding to prevent overflow */
+  background-color: var(--main-color);
+  color: var(--second-bg-color);
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 1rem; /* Adjusted font size for better fit */
+  cursor: default;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer; /* Prevent text wrapping */
+}
+
+.tech-button:hover {
+  background-color: var(--second-bg-color);
+  color: var(--main-color);
+}
+
+.project-link {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.2rem; /* Add spacing between links */
+  margin-top: 1rem; /* Add spacing above links */
+}
+
+.project-link a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--main-color);
+  transition: 0.5s ease;
+}
+
+.project-link a:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}

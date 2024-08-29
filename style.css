@@ -206,9 +206,26 @@ section span {
   align-items: center;
   justify-content: center;
   padding: 0.5rem; /* Adjust padding for spacing */
-  transition: transform 0.3s ease; /* Smooth transform */
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 1s ease; /* Smooth transform and shadow */
   cursor: pointer;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite; /* Subtle pulsing effect */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
 }
 .single-skill img {
   padding: 1.1rem; /* Ensure the image itself is circular */
@@ -219,7 +236,8 @@ section span {
 }
 
 .single-skill .skill-container:hover {
-  transform: scale(1.1); /* Slightly larger hover effect */
+  background-color: var(--text-color);
+  /* Change background color on hover */
 }
 
 .my-experience {
@@ -248,22 +266,58 @@ section span {
 
 .data {
   max-width: 50rem;
+  position: relative; /* Ensure positioning context for pseudo-elements */
 }
 
 .data p {
   font-size: 1.6rem; /* Increase font size for better readability */
   color: var(--main-color);
+  text-decoration: underline var(--main-color) 0.1rem;
+  text-underline-offset: 0.5rem;
 }
+
 .data h2 {
   font-size: 1.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .data ul {
   margin-top: 1rem; /* Add spacing above the list */
-  padding-left: 1.5rem; /* Add padding for list items */
+  padding-left: 2.5rem; /* Add padding for list items */
+  list-style: none; /* Remove default bullets */
+  position: relative; /* Position context for the pseudo-elements */
 }
 
 .data li {
-  margin-bottom: 1rem;
-  font-size: 2rem; /* Add spacing between list items */
+  position: relative; /* Position context for the line */
+  margin-bottom: 2rem; /* Space between list items */
+  font-size: 1.9rem; /* Increase font size for better readability */
+  padding-left: 2.5rem; /* Space for the dot and line */
 }
+
+/* Dot with box shadow */
+.data li::before {
+  content: "";
+  position: absolute;
+  left: -1.3rem; /* Position dot at the start of the line */
+  top: 0; /* Align the dot at the top of the line */
+  width: 1rem; /* Dot diameter */
+  height: 1rem; /* Dot diameter */
+  background: var(--main-color); /* Dot color */
+  border-radius: 50%; /* Make it a circle */
+  box-shadow: 0 0 0.5rem var(--main-color); /* Dot shadow */
+}
+
+/* Line extending from the dot */
+.data li::after {
+  content: "";
+  position: absolute;
+  left: -0.9rem; /* Position line just after the dot */
+  top: 1rem; /* Position line below the dot */
+  width: 2px; /* Line thickness */
+  height: calc(100% - 1rem); /* Line height, adjust if necessary */
+  background: var(--main-color); /* Line color */
+  z-index: -1; /* Place behind the list item text */
+}
+
+/* Remove the dot and line for the last item */

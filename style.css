@@ -198,6 +198,7 @@ section span {
   font-size: 1.6rem;
   max-width: 60rem;
   margin-top: 0.5rem;
+  text-align: justify;
 }
 .home-img img {
   height: 42rem;
@@ -533,10 +534,12 @@ section span {
 .knowme {
   padding: 10rem 9%;
 }
+
 .image-part img {
   height: 28.5rem;
-  width: 15%rem;
+  width: 28rem; /* Corrected the width value */
 }
+
 .activity-box {
   background-color: var(--second-bg-color);
   height: 28rem;
@@ -573,6 +576,7 @@ section span {
   display: flex;
   justify-content: space-between;
 }
+
 .hobbie {
   position: relative;
   border-radius: 1rem;
@@ -622,6 +626,7 @@ section span {
   border-radius: 2rem;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
+
 .work-contact {
   display: flex;
   justify-content: space-between;
@@ -650,14 +655,12 @@ section span {
   gap: 0.8rem;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: var(
-    --text-color
-  ); /* Adjust the background color if needed */
-  color: black; /* Adjust the text color if needed */
-  border: none; /* Remove border if any */
+  background-color: var(--text-color);
+  color: black;
+  border: none;
   text-align: center;
-  /* Ensure text is centered */
 }
+
 .work-contact a button:hover {
   background-color: #eef7ff; /* Slightly scale up for a zoom effect */
 }
@@ -668,25 +671,27 @@ section span {
 .contact {
   padding: 8rem 9%;
 }
+
 .contact-container {
   display: flex;
-  justify-content: center; /* Center both items horizontally */
+  justify-content: space-between; /* Center both items horizontally */
   align-items: center; /* Center both items vertically */
-  justify-content: space-between; /* Space between form and image */
   flex-wrap: wrap; /* Makes it responsive */
   padding: 1rem; /* Add some padding around */
+  gap: 2rem; /* Add gap for spacing between form and image */
 }
 
 .form {
   flex: 1; /* Take equal space */
   max-width: 60rem; /* Limit the max width of the form */
+  width: 100%;
+  /* Ensure it takes full width on small screens */
 }
 
 .input-box {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-  /* Space between labels and inputs */
+  gap: 1.5em; /* Space between labels and inputs */
 }
 
 .input-box label {
@@ -701,12 +706,12 @@ section span {
   padding: 1rem;
   border: 0.02rem solid #ddd;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem; /* Larger input font size */
   resize: none;
-  font-size: 1.5rem;
   background-color: var(--second-bg-color);
   color: var(--text-color);
 }
+
 .input-box button {
   display: flex;
   align-items: center; /* Center content vertically */
@@ -738,22 +743,24 @@ section span {
   color: var(--main-color); /* Change text color on hover */
   box-shadow: none; /* Remove box shadow on hover */
 }
+
 .image-container {
   flex: 1; /* Take equal space */
   display: flex;
   justify-content: center; /* Center the image horizontally */
   align-items: center; /* Center the image vertically */
   max-width: 40rem; /* Limit the max width of the image */
+  width: 100%;
+  /* Ensure it takes full width on small screens */
 }
 
 .image-container img {
   max-width: 100%; /* Responsive width */
-  height: auto;
-  animation: bye 2s linear infinite;
-
-  /* Keep the aspect ratio */
-  /* Rounded corners for a better look */
+  height: auto; /* Keep the aspect ratio */
+  animation: bye 2s linear infinite; /* Animation if needed */
+  border-radius: 1rem; /* Rounded corners for a better look */
 }
+
 @keyframes bye {
   0% {
     transform: translateX(0);
@@ -792,75 +799,10 @@ section span {
   font-size: 2.4rem;
   color: var(--second-bg-color);
 }
+
 /* Media Queries for Responsive Design */
 
 /* Tablets and below */
-@media (max-width: 768px) {
-  .header {
-    padding: 0.5rem 5%;
-  }
-
-  .logo {
-    font-size: 2.5rem;
-  }
-
-  .navbar a {
-    font-size: 1.5rem;
-    margin-left: 1.5rem;
-  }
-
-  #menu-icon {
-    display: block;
-  }
-
-  .home-content h1 {
-    font-size: 4rem;
-  }
-
-  .home-content p {
-    font-size: 1.4rem;
-  }
-
-  .home-img img {
-    height: 30rem;
-    width: 30rem;
-  }
-
-  .about {
-    padding: 6rem 5%;
-  }
-
-  .tech-stack h1,
-  .my-experience h1 {
-    font-size: 2.2rem;
-  }
-
-  .company img {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
-    gap: 2rem;
-  }
-
-  .project-box {
-    height: auto; /* Allow height to adjust based on content */
-  }
-
-  .activity-box {
-    width: 90%;
-  }
-
-  .activity-part h1 {
-    font-size: 2rem;
-  }
-
-  .activity-part p {
-    font-size: 1.6rem;
-  }
-}
 
 /* Mobile phones and below */
 @media (max-width: 480px) {
@@ -876,6 +818,11 @@ section span {
     font-size: 1.2rem;
     margin-left: 1rem;
   }
+  .home {
+    display: block;
+    align-items: center;
+    padding-top: 20rem;
+  }
 
   .home-content h1 {
     font-size: 3rem;
@@ -886,12 +833,12 @@ section span {
   }
 
   .home-img img {
-    height: 25rem;
-    width: 25rem;
+    height: 28rem;
+    width: 28rem;
   }
 
   .about {
-    padding: 4rem 2%;
+    padding: 15rem 4%;
   }
 
   .tech-stack h1,
@@ -903,6 +850,9 @@ section span {
     width: 4rem;
     height: 4rem;
   }
+  .projects {
+    padding-top: 14rem;
+  }
 
   .projects-container {
     grid-template-columns: 1fr; /* Single column for very small screens */
@@ -913,13 +863,35 @@ section span {
     height: auto; /* Allow height to adjust based on content */
   }
   .project-name {
-    font-size: 0.1rem;
+    font-size: 1rem;
   }
   .project-description {
-    font-size: 0.05rem;
+    font-size: 0.6rem;
   }
-  .activity-box {
+  .project-tech span {
+    font-size: 0.4rem;
+    font-weight: bolder;
+  }
+  .project-link a {
+    margin-bottom: 2rem;
+  }
+
+  .knowme {
+    padding: 14rem 4%;
+  }
+
+  .image-part img {
+    height: 12rem;
     width: 100%;
+    margin-bottom: 1rem;
+
+    /* Make image full width */
+  }
+
+  .activity-box {
+    width: 100%; /* Make it full width */
+    height: auto; /* Adjust height automatically */
+    /* Add some spacing at the bottom */
   }
 
   .activity-part h1 {
@@ -928,5 +900,45 @@ section span {
 
   .activity-part p {
     font-size: 1.4rem;
+  }
+
+  .firstline-part,
+  .work-contact {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .second-line {
+    margin-top: 1rem;
+  }
+
+  .work-contact h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem; /* Reduce font size */
+  }
+
+  .work-contact p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-contact a button {
+    width: 100%; /* Make button full width */
+    height: 3rem; /* Reduce button height */
+    font-size: 0.8rem;
+    padding: 1rem; /* Reduce font size */
+  }
+  .work-contact a button i {
+    font-size: 1rem;
+  }
+  .contact-container {
+    flex-direction: column; /* Stack form and image vertically */
+    gap: 2rem; /* Add gap for spacing */
+  }
+
+  .form,
+  .image-container {
+    max-width: 100%; /* Full width on smaller screens */
+    width: 100%; /* Ensure full width */
   }
 }

@@ -531,15 +531,16 @@ section span {
 }
 /* aboutttttt */
 .knowme {
-  padding: 12rem 9%;
+  padding: 10rem 9%;
 }
 .image-part img {
-  height: 25.5rem;
+  height: 28.5rem;
   width: 15%rem;
 }
 .activity-box {
   background-color: var(--second-bg-color);
-  height: 25rem;
+  height: 28rem;
+  overflow: hidden;
   width: 70%;
   border-radius: 2rem;
   border: 0.05rem solid white;
@@ -564,7 +565,7 @@ section span {
 
 .activity-list {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
@@ -573,10 +574,47 @@ section span {
   justify-content: space-between;
 }
 .hobbie {
+  position: relative;
   border-radius: 1rem;
-  padding: 0.8rem;
+  padding: 1rem;
   margin-right: 2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: var(--text-color);
+  color: black;
+  transition: transform 0.3s ease;
+  margin-top: 1.5rem;
 }
+
+.hobbie:hover {
+  transform: scale(1.05);
+}
+
+.hobbie::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* Position tooltip above the button */
+  left: 120%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.hobbie:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .second-line {
   margin-top: 8rem;
   overflow: hidden;
@@ -621,7 +659,7 @@ section span {
   /* Ensure text is centered */
 }
 .work-contact a button:hover {
-  background-color: #eae4dd; /* Slightly scale up for a zoom effect */
+  background-color: #eef7ff; /* Slightly scale up for a zoom effect */
 }
 
 .work-contact a button i {
@@ -727,18 +765,20 @@ section span {
     transform: translate(0);
   }
 }
+
 .footer-content {
+  padding: 1.5rem 9%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem 9%;
-  background-color: var(--second-bg-color);
-  height: 5rem;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
   font-size: 1.3rem;
+  gap: 2rem; /* Add some gap between the text and icon */
 }
+
 .footer-text span {
   color: var(--main-color);
 }
+
 .icon-top a {
   display: inline-flex;
   justify-content: center;
@@ -747,6 +787,7 @@ section span {
   background: var(--main-color);
   border-radius: 0.8rem;
 }
+
 .icon-top a i {
   font-size: 2.4rem;
   color: var(--second-bg-color);

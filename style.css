@@ -864,16 +864,18 @@ section span {
   }
 
   .project-box {
-    height: auto; /* Allow height to adjust based on content */
+    height: 40rem;
+    /* Allow height to adjust based on content */
   }
+
   .project-name {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .project-description {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .project-tech span {
-    font-size: 0.4rem;
+    font-size: 0.8rem;
     font-weight: bolder;
   }
   .project-link a {
@@ -881,7 +883,7 @@ section span {
   }
 
   .knowme {
-    padding: 14rem 4%;
+    padding: 18rem 4%;
   }
 
   .image-part img {
@@ -917,12 +919,12 @@ section span {
   }
 
   .work-contact h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem; /* Reduce font size */
   }
 
   .work-contact p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
 

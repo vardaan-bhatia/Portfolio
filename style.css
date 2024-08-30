@@ -887,9 +887,10 @@ section span {
   }
 
   .image-part img {
-    height: 12rem;
+    height: 25rem;
     width: 100%;
     margin-bottom: 1rem;
+    margin-left: 3rem;
 
     /* Make image full width */
   }

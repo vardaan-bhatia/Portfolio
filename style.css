@@ -96,21 +96,22 @@ section {
   padding: 0 9% 2rem;
 }
 .home {
-  position: relative; /* Required for pseudo-elements to be positioned correctly */
+  position: relative; /* Ensure pseudo-elements are positioned relative to this container */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 9%;
-  overflow: hidden; /* Hide overflow to prevent the effect from spilling out */
+  overflow: hidden;
+  z-index: 1; /* Ensure content is above pseudo-elements */
 }
 
-/* Glowing effect for the home section */
+/* Moving background effect */
 .home::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%; /* Extend beyond the container for a smooth transition */
+  width: 200%;
   height: 200%;
   background: linear-gradient(
       120deg,
@@ -130,10 +131,11 @@ section {
     );
   background-size: 200% 200%;
   animation: moveBackground 4s infinite linear;
-  z-index: 1; /* Ensure it's above the background but below the content */
+  z-index: -2; /* Move behind the content */
   pointer-events: none; /* Prevent it from interfering with clicks */
 }
 
+/* Glowing effect */
 .home::after {
   content: "";
   position: absolute;
@@ -148,8 +150,9 @@ section {
   );
   transform: translate(-50%, -50%);
   filter: blur(50px);
-  z-index: 0; /* Ensure it's below the moving background */
+  z-index: -3; /* Ensure it's below the moving background */
   animation: glow 5s infinite alternate;
+  pointer-events: none; /* Prevent it from interfering with clicks */
 }
 
 /* Keyframes for glowing effect */
@@ -172,6 +175,11 @@ section {
   to {
     opacity: 0.7;
   }
+}
+
+.home-content {
+  position: relative; /* Set a relative positioning to manage z-index */
+  z-index: 2; /* Higher z-index than pseudo-elements for interactivity */
 }
 
 .home-content h3 {
@@ -207,6 +215,12 @@ section span {
   100% {
     transform: translate(0px, 0px);
   }
+}
+
+.social-media a,
+.download-cv {
+  position: relative; /* Ensure links are clickable */
+  z-index: 2; /* Make sure links/buttons stay above pseudo-elements */
 }
 .social-media a {
   display: inline-flex;
@@ -612,4 +626,104 @@ section span {
 
 .work-contact a button i {
   font-size: 2rem; /* Adjust the icon size if needed */
+}
+.contact {
+  padding: 8rem 9%;
+}
+.contact-container {
+  display: flex;
+  justify-content: center; /* Center both items horizontally */
+  align-items: center; /* Center both items vertically */
+  gap: 5rem; /* Space between form and image */
+  flex-wrap: wrap; /* Makes it responsive */
+  padding: 2rem; /* Add some padding around */
+}
+
+.form {
+  flex: 1; /* Take equal space */
+  max-width: 55rem; /* Limit the max width of the form */
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  /* Space between labels and inputs */
+}
+
+.input-box label {
+  margin-bottom: 0.2rem; /* Add space between label and input */
+  font-weight: bold;
+  font-size: 1.5rem; /* Bold labels */
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%; /* Full width of the container */
+  padding: 1rem;
+  border: 0.02rem solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: none;
+  font-size: 1.5rem;
+  background-color: var(--second-bg-color);
+  color: var(--text-color);
+}
+.input-box button {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  border-radius: 1rem;
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  height: 4rem;
+  width: 18rem;
+  gap: 0.5rem; /* Reduced gap for better alignment */
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  border: none; /* Remove default button border */
+  padding: 0.5rem 1rem; /* Add padding for better spacing */
+  transition: background 0.3s ease;
+  margin-top: 1rem; /* Add smooth transition */
+}
+
+.input-box button i {
+  font-size: 1.8rem; /* Adjust icon size */
+}
+
+.input-box button:hover {
+  background: var(--second-bg-color); /* Add hover effect */
+  color: var(--main-color); /* Change text color on hover */
+  box-shadow: none; /* Remove box shadow on hover */
+}
+.image-container {
+  flex: 1; /* Take equal space */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  max-width: 40rem; /* Limit the max width of the image */
+}
+
+.image-container img {
+  max-width: 100%; /* Responsive width */
+  height: auto;
+  animation: bye 2s linear infinite;
+
+  /* Keep the aspect ratio */
+  /* Rounded corners for a better look */
+}
+@keyframes bye {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(1rem, 1rem);
+  }
+  100% {
+    transform: translate(0);
+  }
 }

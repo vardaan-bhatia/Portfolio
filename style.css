@@ -792,3 +792,141 @@ section span {
   font-size: 2.4rem;
   color: var(--second-bg-color);
 }
+/* Media Queries for Responsive Design */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem 5%;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .navbar a {
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content p {
+    font-size: 1.4rem;
+  }
+
+  .home-img img {
+    height: 30rem;
+    width: 30rem;
+  }
+
+  .about {
+    padding: 6rem 5%;
+  }
+
+  .tech-stack h1,
+  .my-experience h1 {
+    font-size: 2.2rem;
+  }
+
+  .company img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+    gap: 2rem;
+  }
+
+  .project-box {
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .activity-box {
+    width: 90%;
+  }
+
+  .activity-part h1 {
+    font-size: 2rem;
+  }
+
+  .activity-part p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile phones and below */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 2%;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .navbar a {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+  }
+
+  .home-img img {
+    height: 25rem;
+    width: 25rem;
+  }
+
+  .about {
+    padding: 4rem 2%;
+  }
+
+  .tech-stack h1,
+  .my-experience h1 {
+    font-size: 1.8rem;
+  }
+
+  .company img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 1rem;
+  }
+
+  .project-box {
+    height: auto; /* Allow height to adjust based on content */
+  }
+  .project-name {
+    font-size: 0.1rem;
+  }
+  .project-description {
+    font-size: 0.05rem;
+  }
+  .activity-box {
+    width: 100%;
+  }
+
+  .activity-part h1 {
+    font-size: 1.8rem;
+  }
+
+  .activity-part p {
+    font-size: 1.4rem;
+  }
+}

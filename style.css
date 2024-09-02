@@ -807,6 +807,24 @@ section span {
 
 /* Mobile phones and below */
 @media (max-width: 480px) {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  #menu-icon {
+    display: flex; /* Show the toggle button */
+    cursor: pointer; /* Pointer cursor on hover */
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #menu-icon i {
+    font-size: 2rem; /* Adjust size as needed */
+    color: #fff; /* Customize as needed */
+  }
   .header {
     padding: 0.5rem 2%;
   }
@@ -814,10 +832,27 @@ section span {
   .logo {
     font-size: 2rem;
   }
+  .navbar {
+    /* Hide by default */
+    /* Stack items vertically */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    background-color: var(--bg-color); /* Background color */
+    width: 100%; /* Full width for better accessibility */
+    padding: 1rem 0;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2); /* Padding for links */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Slight shadow */
+  }
+  .navbar.active {
+    display: block;
+  }
 
   .navbar a {
-    font-size: 1.2rem;
-    margin-left: 1rem;
+    font-size: 2rem;
+    display: block;
+    margin: 3rem 1rem;
   }
   .home {
     display: block;
@@ -843,7 +878,7 @@ section span {
   }
 
   .about {
-    padding: 15rem 4%;
+    padding: 0rem 4%;
   }
 
   .tech-stack h1,
@@ -856,7 +891,7 @@ section span {
     height: 4rem;
   }
   .projects {
-    padding-top: 14rem;
+    padding-top: 0rem;
   }
 
   .projects-container {
@@ -884,7 +919,7 @@ section span {
   }
 
   .knowme {
-    padding: 18rem 4%;
+    padding: 0rem 4%;
   }
 
   .image-part img {

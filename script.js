@@ -48,3 +48,9 @@ var typed = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
+const menuIcon = document.getElementById("menu-icon");
+menuIcon.addEventListener("click", function () {
+  const navbar = document.querySelector(".navbar");
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active"); // Toggle the active class to show/hide the menu
+});

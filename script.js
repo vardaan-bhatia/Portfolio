@@ -1,7 +1,8 @@
-//scroll Sections Active Link
-
+// Scroll Sections Active Link
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
+let navbar = document.querySelector(".navbar");
+let menuIcon = document.getElementById("menu-icon");
 
 window.onscroll = () => {
   let top = window.scrollY;
@@ -18,12 +19,21 @@ window.onscroll = () => {
       document
         .querySelector(`header nav a[href*=${id}]`)
         .classList.add("active");
+
+      // Hide the navbar if menu icon is in 'active' state
+      if (navbar.classList.contains("active")) {
+        navbar.classList.remove("active");
+        menuIcon.classList.remove("bx-x");
+      }
     }
   });
+
+  // Sticky header logic
+  let header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 100);
 };
 
-//scroll Reveal
-
+// Scroll Reveal
 ScrollReveal({
   distance: "80px",
   duration: 2000,
@@ -39,8 +49,7 @@ ScrollReveal().reveal(".activity-box", { origin: "right" });
 ScrollReveal().reveal(".image-container", { origin: "left" });
 ScrollReveal().reveal(".form", { origin: "right" });
 
-//typed animation
-
+// Typed Animation
 var typed = new Typed(".multiple-text", {
   strings: ["Frontend Developer", "Tech Blogger"],
   typeSpeed: 100,
@@ -48,9 +57,9 @@ var typed = new Typed(".multiple-text", {
   backDelay: 1000,
   loop: true,
 });
-const menuIcon = document.getElementById("menu-icon");
+
+// Toggle Navbar Visibility
 menuIcon.addEventListener("click", function () {
-  const navbar = document.querySelector(".navbar");
-  menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active"); // Toggle the active class to show/hide the menu
+  menuIcon.classList.toggle("bx-x"); // Toggle the icon
 });

@@ -857,7 +857,7 @@ section span {
   .home {
     display: block;
     align-items: center;
-    padding-top: 20rem;
+    padding-top: 18rem;
   }
 
   .home-content h1 {
@@ -875,10 +875,11 @@ section span {
   .home-img img {
     height: 28rem;
     width: 28rem;
+    margin-left: 0.5rem;
   }
 
   .about {
-    padding: 0rem 4%;
+    padding: 5rem 4%;
   }
 
   .tech-stack h1,
@@ -891,7 +892,7 @@ section span {
     height: 4rem;
   }
   .projects {
-    padding-top: 0rem;
+    padding-top: 5rem;
   }
 
   .projects-container {
@@ -919,19 +920,20 @@ section span {
   }
 
   .knowme {
-    padding: 0rem 4%;
+    padding: 5rem 4%;
   }
 
   .image-part img {
     height: 25rem;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     margin-left: 3rem;
 
     /* Make image full width */
   }
 
   .activity-box {
+    margin-bottom: 2rem;
     width: 100%; /* Make it full width */
     height: auto; /* Adjust height automatically */
     /* Add some spacing at the bottom */

@@ -42,7 +42,7 @@ ScrollReveal().reveal(".form", { origin: "right" });
 //typed animation
 
 var typed = new Typed(".multiple-text", {
-  strings: ["Frontend Developer", "Blogger"],
+  strings: ["Frontend Developer", "Tech Blogger"],
   typeSpeed: 100,
   backSpeed: 50,
   backDelay: 1000,

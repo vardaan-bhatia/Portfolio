@@ -94,6 +94,7 @@ body {
 section {
   min-height: 100vh;
   padding: 0 9% 2rem;
+  scroll-margin-top: 10rem; /* Adjust based on the height of the navbar */
 }
 .home {
   position: relative; /* Ensure pseudo-elements are positioned relative to this container */
@@ -260,7 +261,7 @@ section span {
 /* about section */
 /* about section */
 .about {
-  padding: 12rem 9%;
+  padding: 0rem 9%;
   display: flex;
   flex-wrap: wrap; /* Ensure that content wraps on smaller screens */
   gap: 4rem; /* Add gap between tech stack and experience */
@@ -413,7 +414,7 @@ section span {
 /* Projects Section */
 /* Projects Section */
 .projects {
-  padding: 10rem 9%;
+  padding: 0rem 9%;
   text-align: center;
   page-break-after: always;
 }
@@ -532,7 +533,7 @@ section span {
 }
 /* aboutttttt */
 .knowme {
-  padding: 10rem 9%;
+  padding: 0rem 9%;
 }
 
 .image-part img {
@@ -669,7 +670,7 @@ section span {
   font-size: 2rem; /* Adjust the icon size if needed */
 }
 .contact {
-  padding: 8rem 9%;
+  padding: 0rem 9%;
 }
 
 .contact-container {

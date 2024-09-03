@@ -857,7 +857,7 @@ section span {
   .home {
     display: block;
     align-items: center;
-    padding-top: 18rem;
+    padding-top: 12rem;
   }
 
   .home-content h1 {
@@ -875,7 +875,7 @@ section span {
   .home-img img {
     height: 28rem;
     width: 28rem;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 
   .about {

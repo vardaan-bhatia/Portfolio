@@ -6,12 +6,16 @@ async function sendEmail(event) {
   event.preventDefault(); // Prevent the default form submission
 
   try {
-    await emailjs.sendForm("service_5ox9uez", "template_kuqtkq9", event.target);
-    toastr.success("Message sent successfully!");
+    const result = await emailjs.sendForm(
+      "service_5ox9uez",
+      "template_kuqtkq9",
+      event.target
+    );
+    alert("Message sent successfully!");
     event.target.reset(); // Reset the form
   } catch (error) {
     console.error("Error:", error.text);
-    toastr.error("Failed to send message.");
+    alert("Failed to send message.");
   }
 }
 

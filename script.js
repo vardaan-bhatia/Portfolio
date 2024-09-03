@@ -1,3 +1,27 @@
+// Initialize EmailJS with your user ID
+emailjs.init("O7zKidmjbxo__NgMj"); // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+
+// Function to send an email
+async function sendEmail(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  try {
+    const result = await emailjs.sendForm(
+      "service_5ox9uez",
+      "template_kuqtkq9",
+      event.target
+    );
+    alert("Message sent successfully!");
+    event.target.reset(); // Reset the form
+  } catch (error) {
+    console.error("Error:", error.text);
+    alert("Failed to send message.");
+  }
+}
+
+// Attach the sendEmail function to your form
+document.getElementById("contact-form").addEventListener("submit", sendEmail);
+
 // Scroll Sections Active Link
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");

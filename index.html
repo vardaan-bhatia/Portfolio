@@ -440,15 +440,28 @@
         </div>
         <!-- Form Section -->
         <div class="form">
-          <form action="#">
+          <form id="contact-form">
             <div class="input-box">
               <label for="name">Name</label>
-              <input type="text" placeholder="Enter your name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+              />
               <label for="email">Email</label>
-              <input type="email" placeholder="Enter your email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
               <label for="message">Enter your Message</label>
               <textarea
                 id="message"
+                name="message"
                 cols="30"
                 rows="10"
                 placeholder="Your message here..."
@@ -480,6 +493,7 @@
     </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -21,10 +21,3 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 Check out the live version of the portfolio: **[Live Demo](https://vardaanbhatia.vercel.app/)**
 
-## 📦 Installation
-
-To run this project locally:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/vardaan-bhatia/Portfolio.git

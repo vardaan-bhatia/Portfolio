@@ -1,5 +1,5 @@
 // Initialize EmailJS with your user ID
-emailjs.init("O7zKidmjbxo__NgMj"); // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+emailjs.init("O7zKidmjbxo__NgMj");
 
 // Function to send an email
 async function sendEmail(event) {
@@ -19,7 +19,6 @@ async function sendEmail(event) {
   }
 }
 
-// Attach the sendEmail function to your form
 document.getElementById("contact-form").addEventListener("submit", sendEmail);
 
 // Scroll Sections Active Link
